@@ -155,3 +155,8 @@ Input files should contain one command per line. Here’s the format and example
 - `LOAD_DATA songs.csv` - Command to load songs from a specified CSV file.
 - `CREATE_USER username` - Command to create a new user with the given username.
 - `CREATE_PLAYLIST user_id playlist_name song_ids` - Command to create a playlist for a specified user. Song IDs should be provided in a space-separated list.
+
+## Improved version
+This is a version 1 of the Jukebox project. I enhanced it even further by making it a Rest API. Using Spring Boot and maven, I developed an interactive API. I used a real database and performed operations on database using rest endpoints.
+
+Please refer my code repository at https://github.com/naveenerroju/TheJukeBox_API
