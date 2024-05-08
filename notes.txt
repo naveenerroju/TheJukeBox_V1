@@ -1,0 +1,2 @@
+To give persmission to gradle build to run:
+chmod +x gradlew
