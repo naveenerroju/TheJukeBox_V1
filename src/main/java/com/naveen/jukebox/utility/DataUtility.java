@@ -136,22 +136,6 @@ public class DataUtility {
 
 
     /**
-     * Prints a list of songs to the standard output.
-     * <p>
-     * This method iterates over a list of {@link Songs} objects and prints each song's details to the standard output
-     * using the song's {@code toString()} method. Each song is printed on a new line.
-     * </p>
-     *
-     * @param songs A list of {@link Songs} objects to be printed. If the list is empty, nothing will be printed.
-     */
-    public static void printSongs(List<Songs> songs) {
-        for (Songs song : songs) {
-            DataUtility.printOutput(song.toString());
-        }
-    }
-
-
-    /**
      * Converts a subset of a string array into an integer array.
      * <p>
      * This method starts from the fourth element of the provided string array and attempts to convert each
