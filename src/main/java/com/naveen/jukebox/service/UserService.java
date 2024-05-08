@@ -65,7 +65,7 @@ public class UserService {
 
         User user = userRepository.getUserByUserId(userId);
         if (user == null) {
-            return "User not found.";
+            return Constants.USER_NOT_FOUND;
         }
 
         Playlist playlist = new Playlist();
@@ -117,7 +117,7 @@ public class UserService {
         // Validate if the user and playlist exist
         User user = userRepository.getUserByUserId(userId);
         if (user == null) {
-            return "User not found.";
+            return Constants.USER_NOT_FOUND;
         }
 
         Playlist playlist = user.getPlaylists().stream()
@@ -125,7 +125,7 @@ public class UserService {
                 .findFirst()
                 .orElse(null);
         if (playlist == null) {
-            return "Playlist not found.";
+            return Constants.PLAYLIST_NOT_FOUND;
         }
 
         if (playlist.getSongs().isEmpty()) {
@@ -261,7 +261,7 @@ public class UserService {
         // Retrieve user or return error if not found
         User user = userRepository.getUserByUserId(userId);
         if (user == null) {
-            return "User not found.";
+            return Constants.USER_NOT_FOUND;
         }
 
         // Retrieve playlist or return error if not found
@@ -270,13 +270,13 @@ public class UserService {
                 .findFirst()
                 .orElse(null);
         if (userPlaylist == null) {
-            return "Playlist not found.";
+            return Constants.PLAYLIST_NOT_FOUND;
         }
 
         // Retrieve song or return error if not found
         Songs addSong = songsService.getSongsBySongId(songId);
         if (addSong == null) {
-            return "Song not found.";
+            return Constants.SONG_NOT_FOUND;
         }
 
         // Add song to the playlist
@@ -305,7 +305,7 @@ public class UserService {
         // Retrieve user or return error if not found
         User user = userRepository.getUserByUserId(userId);
         if (user == null) {
-            return "User not found.";
+            return Constants.USER_NOT_FOUND;
         }
 
         // Retrieve playlist or return error if not found
@@ -314,13 +314,13 @@ public class UserService {
                 .findFirst()
                 .orElse(null);
         if (userPlaylist == null) {
-            return "Playlist not found.";
+            return Constants.PLAYLIST_NOT_FOUND;
         }
 
         // Retrieve song or return error if not found
         Songs removableSong = songsService.getSongsBySongId(songId);
         if (removableSong == null) {
-            return "Song not found.";
+            return Constants.SONG_NOT_FOUND;
         }
 
         // Attempt to remove the song from the playlist; check if successful

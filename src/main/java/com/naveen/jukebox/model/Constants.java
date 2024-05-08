@@ -15,4 +15,7 @@ public class Constants {
     public static final String DELETE_SONG_IN_PLAYLIST_OPERATION = "DELETE-SONG";
     public static final String PLAY_NEXT_SONG_OPERATION = "NEXT";
     public static final String PLAY_PREVIOUS_SONG_OPERATION = "BACK";
+    public static final String USER_NOT_FOUND = "User not found.";
+    public static final String PLAYLIST_NOT_FOUND = "Playlist not found.";
+    public static final String SONG_NOT_FOUND = "Song not found.";
 }
