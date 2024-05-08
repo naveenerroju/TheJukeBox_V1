@@ -30,7 +30,6 @@ public class UserService {
     }
 
     public String createPlaylist(int userId, String playlistName, int[] songIds){
-        //System.out.println(userRepository.getUsers().toString());
         Playlist playlist = new Playlist();
         int playlistId = userRepository.getUserByUserId(userId).getPlaylists().size()+1;
         playlist.setId(playlistId);
