@@ -83,8 +83,7 @@ public class UserService {
             playlist.getSongs().add(song);
         }
 
-        userRepository.createPlaylist(userId, playlist);
-        return "Playlist ID - " + playlistId;
+        return userRepository.createPlaylist(userId, playlist);
     }
 
 
