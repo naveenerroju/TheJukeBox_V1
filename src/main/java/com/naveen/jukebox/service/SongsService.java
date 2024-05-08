@@ -38,7 +38,7 @@ public class SongsService {
     /**
      * Retrieves a song by its ID.
      * <p>
-     * This method searches for a song within the repository using the provided song ID.
+     * This method calls repository using the provided song ID.
      * If a match is found, the song object is returned; otherwise, it returns null.
      * </p>
      *
@@ -46,12 +46,7 @@ public class SongsService {
      * @return the {@link Songs} object if found, or null if no song matches the given ID.
      */
     public Songs getSongsBySongId(int songId) {
-        for (Songs song : repository.getSongs()) {
-            if (song.getId() == songId) {
-                return song;
-            }
-        }
-        return null;
+        return repository.getSongBySongId(songId);
     }
 
 }

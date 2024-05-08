@@ -16,16 +16,7 @@ public class SongsRepository {
     /**
      * A list that holds all the songs.
      */
-    private static List<Songs> songs = new ArrayList<>();
-
-    /**
-     * Retrieves all songs stored in the repository.
-     *
-     * @return A list of {@link Songs} representing all the songs currently stored.
-     */
-    public List<Songs> getSongs() {
-        return SongsRepository.songs;
-    }
+    private static final List<Songs> songs = new ArrayList<>();
 
     /**
      * Adds a list of songs to the repository.
