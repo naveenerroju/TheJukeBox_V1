@@ -2,6 +2,7 @@ package com.naveen.jukebox;
 
 import java.util.*;
 import java.util.stream.Collectors;
+
 import com.naveen.jukebox.command.JukeboxCommands;
 import com.naveen.jukebox.utility.DataUtility;
 
@@ -16,6 +17,15 @@ import com.naveen.jukebox.utility.DataUtility;
  *
  * @implNote This class is designed to be run with Gradle, where command-line arguments specify the input file
  * containing commands to be executed. It processes these commands sequentially as they appear in the file.
+ *<br>
+ * <p>For more details, you can reach out to the author:</p>
+ * <ul>
+ * <li><strong>Author:</strong> Naveen Kumar Errojula</li>
+ * <li><strong>Email:</strong> <a href="mailto:naveenkumarerroju@gmail.com">naveenkumarerroju@gmail.com</a></li>
+ * <li><strong>GitHub:</strong> <a href="https://github.com/naveenerroju">https://github.com/naveenerroju/</a></li>
+ * </ul>
+ * <p>
+ * @author Naveen Kumar
  */
 public class App {
 
