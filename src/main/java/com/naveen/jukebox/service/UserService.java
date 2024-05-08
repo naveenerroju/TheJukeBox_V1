@@ -11,8 +11,8 @@ import com.naveen.jukebox.utility.DataUtility;
 
 public class UserService {
 
-    private UserRepository userRepository = new UserRepository();
-    private SongsService songsService = new SongsService();
+    private final UserRepository userRepository = new UserRepository();
+    private final SongsService songsService = new SongsService();
 
     public String createUser(String username){
         if(!username.isBlank()){

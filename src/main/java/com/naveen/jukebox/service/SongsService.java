@@ -1,7 +1,5 @@
 package com.naveen.jukebox.service;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.List;
 import com.naveen.jukebox.model.Songs;
 import com.naveen.jukebox.repository.SongsRepository;
@@ -10,9 +8,9 @@ import com.opencsv.exceptions.CsvException;
 
 public class SongsService {
 
-    private SongsRepository repository = new SongsRepository();
+    private final SongsRepository repository = new SongsRepository();
     
-    public void loadSongs(String filepath) throws FileNotFoundException, IOException, CsvException{
+    public void loadSongs(String filepath) throws CsvException{
         List<String[]> res = DataUtility.readCsvFile(filepath);
         repository.loadSongs(DataUtility.convertDataSongs(res));
     }
