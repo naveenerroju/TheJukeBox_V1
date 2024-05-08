@@ -140,7 +140,6 @@ public class JukeboxCommands implements IJukeCommands {
             result = userService.playSong(Integer.parseInt(commands[1]), commands[2]);
         }
         DataUtility.printOutput(result);
-        
     }
     
 }
