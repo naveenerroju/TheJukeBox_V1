@@ -140,7 +140,7 @@ Modifies a playlist. There are two sub operations in this single operation.
 **Output**: result String, song details
 
 # Testing
-Integration tests are provided in the AppTest.java file which includes tests based on the example input and output provided in the project. Ensure to run these tests to verify the application's functionality after any changes.
+Integration tests are provided in the AppTest.java file which includes tests based on the example input and output provided in the project. This test alone will cover 80% of the code. Ensure to run these tests to verify the application's functionality after any changes.
 
 # Files Included
 Sample CSV File: songs.csv
