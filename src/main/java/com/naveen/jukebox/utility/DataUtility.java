@@ -125,6 +125,7 @@ public class DataUtility {
                         song.setCollaboration(collabs);
                     }
                     default -> {
+                        break;
                     }
                 }
             }
@@ -145,7 +146,7 @@ public class DataUtility {
      */
     public static void printSongs(List<Songs> songs) {
         for (Songs song : songs) {
-            System.out.println(song.toString());
+            DataUtility.printOutput(song.toString());
         }
     }
 
@@ -223,6 +224,14 @@ public class DataUtility {
             sb.append(song.getId()).append(" ");
         }
         return sb.substring(0, sb.length() - 1); // Remove the trailing space
+    }
+
+    /**
+     * Prints the string in console
+     * @param output string to print
+     */
+    public static void printOutput(String output){
+        System.out.println(output);
     }
 
 }

@@ -79,10 +79,10 @@ public class JukeboxCommands implements IJukeCommands {
                 case Constants.PLAY_SONG_OPERATION -> //play song
                         playSong(commands);
                 case Constants.PLAY_PLAYLIST_OPERATION -> playPlaylist(commands);
-                default -> System.out.println("Invalid Operation");
+                default -> DataUtility.printOutput("Invalid Operation");
             }
         } else {
-            System.out.println("Invalid Operation");
+            DataUtility.printOutput("Invalid Operation");
         }
     }
 
@@ -91,7 +91,7 @@ public class JukeboxCommands implements IJukeCommands {
         String filepath = commands[1];
         try {
             songsService.loadSongs(filepath);
-            System.out.println("Songs Loaded successfully");
+            DataUtility.printOutput("Songs Loaded successfully");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -101,12 +101,12 @@ public class JukeboxCommands implements IJukeCommands {
         int userId = Integer.parseInt(commands[1]);
         int[] songIds = DataUtility.stringArrayToIntArray(commands);
         String result = userService.createPlaylist(userId, commands[2], songIds);
-        System.out.println(result);
+        DataUtility.printOutput(result);
     }
 
     private void createUser(String[] commands){
         String username = commands[1];
-        System.out.println(userService.createUser(username));
+        DataUtility.printOutput(userService.createUser(username));
         
     }
 
@@ -114,12 +114,12 @@ public class JukeboxCommands implements IJukeCommands {
         int userId = Integer.parseInt(commands[1]);
         int playlistId = Integer.parseInt(commands[2]);
         String result = userService.deletePlaylist(userId, playlistId);
-        System.out.println(result);
+        DataUtility.printOutput(result);
     }
 
     private void playPlaylist(String[] commands){
         String result = userService.playPlaylist(Integer.parseInt(commands[1]), Integer.parseInt(commands[2]));
-        System.out.println(result);
+        DataUtility.printOutput(result);
     }
 
     private void modifyPlaylist(String[] commands){
@@ -129,7 +129,7 @@ public class JukeboxCommands implements IJukeCommands {
         } else if(commands[1].equals(Constants.DELETE_SONG_IN_PLAYLIST_OPERATION)) {
             result = userService.deleteSongInPlaylist(Integer.parseInt(commands[2]), Integer.parseInt(commands[3]), Integer.parseInt(commands[4]));
         }
-        System.out.println(result);
+        DataUtility.printOutput(result);
     }
 
     private void playSong(String[] commands){
@@ -139,7 +139,7 @@ public class JukeboxCommands implements IJukeCommands {
         } catch (NumberFormatException e) {
             result = userService.playSong(Integer.parseInt(commands[1]), commands[2]);
         }
-        System.out.println(result);
+        DataUtility.printOutput(result);
         
     }
     
