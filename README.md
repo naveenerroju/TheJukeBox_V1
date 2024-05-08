@@ -1,6 +1,63 @@
-# The Juke Box
+# The Jukebox
 
-The Jukebox V1 is a simpler version of my Jukebox project. It is an in memory application. we can add users, songs and create playlists of users for users.
+The Jukebox V1 is a Java-based application utilizing the command design pattern to simulate a jukebox system. This application functions as an in-memory database for managing songs, users, and playlists. The system reads commands from input files to perform various operations like loading songs from a CSV file, creating users, and managing playlists.
+
+We need a file that has the commands. Each file has set of commands. Make a list of file paths and send the list as an argument to the main method. The output will be printed in the console. Songs can be loaded using a csv file. This CSV file is needed to be in a particular format for parsing to model class. Refer the existing sample Songs csv file in the root folder of the project.
+
+A sample Input file is already existing in the project, jukebox-input.txt. Refer this file for more information on the input. A integration testcase is already written in AppTest.java. Refer how the input is passing and what is the expected output for the specified input command.
+
+## Features
+
+- **Load Songs**: Load song details from a CSV file into the application's memory.
+- **Create Users**: Add new users to the system.
+- **Create Playlists**: Users can create playlists which can include any of the loaded songs.
+- **Command Pattern**: Utilizes the command pattern to handle various operations dynamically.
+- **In-Memory Data**: This project uses InMemoryData. You do not need any external database.
+
+## Project Structure
+The Jukebox V1 is organized into several directories under `src/main/java` and `src/test/java` for the application's source code and tests, respectively.
+
+- **.gradle/**
+- **gradle/**
+- **src/**
+    - **main/**
+        - **java/**
+            - **com/**
+                - **naveen/**
+                    - **jukebox/**
+                        - **command/**
+                            - IJukeCommands.java
+                            - JukeboxCommands.java
+                        - **model/**
+                            - Constants.java
+                            - CurrentlyPlaying.java
+                            - Playlist.java
+                            - Songs.java
+                            - User.java
+                        - **repository/**
+                            - SongsRepository.java
+                            - UserRepository.java
+                        - **service/**
+                            - SongsService.java
+                            - UserService.java
+                        - **utility/**
+                            - DataUtility.java
+                        - App.java
+    - **test/**
+        - **java/**
+            - **com/**
+                - **naveen/**
+                    - **jukebox/**
+                        - AppTest.java
+- .gitignore
+- build.gradle
+- gradlew
+- jukebox-input.txt
+- notes.txt
+- README.md
+- songs.csv
+
+This structure outlines the main components and files within the project, providing a clear map of where functionalities are located and how the project is organized.
 
 ## Operations
 
@@ -12,7 +69,7 @@ The Jukebox V1 is a simpler version of my Jukebox project. It is an in memory ap
 6. Modify Playlist
 7. Play Song
 
-## Load data:
+### Load data:
 
 Provide a valid CSV file path. With song all fields. Program will read all the valid columns as song fields and store in in-memory data. Refer the existing csv file for the format.
 
@@ -26,7 +83,7 @@ Collaborators should be separated with ‘#’ symbol. Example: Ed Sheeran#Cardi
 
 **Output**: no output.
 
-## Create User:
+### Create User:
 
 We need users to create playlists or play songs from playlists.
 
@@ -36,7 +93,7 @@ We need users to create playlists or play songs from playlists.
 
 **Output**: userId, Username
 
-## Create Playlist:
+### Create Playlist:
 
 Create a playlist for a user
 
@@ -46,7 +103,7 @@ Create a playlist for a user
 
 **Output**: playlist id
 
-## Delete Playlist:
+### Delete Playlist:
 
 Deletes a playlist for a user
 
@@ -56,7 +113,7 @@ Deletes a playlist for a user
 
 **Output**: result String
 
-## Play Playlist:
+### Play Playlist:
 
 Plays a playlist for the user.  Playlist starts from the first song of the playlist. There are two sub operations in this single operation.
 
@@ -69,7 +126,7 @@ Plays a playlist for the user.  Playlist starts from the first song of the playl
 
 **Output**: result String, song details
 
-## Modify Playlist:
+### Modify Playlist:
 
 Modifies a playlist. There are two sub operations in this single operation.
 
@@ -81,3 +138,20 @@ Modifies a playlist. There are two sub operations in this single operation.
 **Input**: sub operation command, userId, playlist id, song id
 
 **Output**: result String, song details
+
+# Testing
+Integration tests are provided in the AppTest.java file which includes tests based on the example input and output provided in the project. Ensure to run these tests to verify the application's functionality after any changes.
+
+# Files Included
+Sample CSV File: songs.csv
+Sample Input File: instructions.txt
+Integration Test File: AppTest.java
+
+
+## Input Files
+
+Input files should contain one command per line. Here’s the format and example of commands you might include in an input file:
+
+- `LOAD_DATA songs.csv` - Command to load songs from a specified CSV file.
+- `CREATE_USER username` - Command to create a new user with the given username.
+- `CREATE_PLAYLIST user_id playlist_name song_ids` - Command to create a playlist for a specified user. Song IDs should be provided in a space-separated list.
